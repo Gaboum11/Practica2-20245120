@@ -1,0 +1,15 @@
+# Ignorar todo en el directorio padre
+../../*
+
+# Pero permitir la carpeta actual (Practica 2)
+!../
+
+# Archivos comunes de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.temp
+~*
