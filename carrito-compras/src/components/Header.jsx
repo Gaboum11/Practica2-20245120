@@ -1,5 +1,5 @@
 
-export const Header = ({cart, total} ) => {
+export const Header = ({cart, total, removeFromCart, decreaseQuantity, increaseQuantity, clearCart} ) => {
   return (
    <header className="py-5 header">
         <div className="container-xl">
@@ -43,6 +43,7 @@ export const Header = ({cart, total} ) => {
                                             <button
                                                 type="button"
                                                 className="btn btn-dark"
+                                                onClick={() => decreaseQuantity(guitar)}
                                             >
                                                 -
                                             </button>
@@ -50,6 +51,7 @@ export const Header = ({cart, total} ) => {
                                             <button
                                                 type="button"
                                                 className="btn btn-dark"
+                                                onClick={() => increaseQuantity(guitar)}
                                             >
                                                 +
                                             </button>
@@ -58,7 +60,7 @@ export const Header = ({cart, total} ) => {
                                             <button
                                                 className="btn btn-danger"
                                                 type="button"
-                                                
+                                                onClick={() => removeFromCart(guitar)}
                                             >
                                                 X
                                             </button>
@@ -69,7 +71,7 @@ export const Header = ({cart, total} ) => {
                             </table>
                             )}
                             <p className="text-end">Total pagar: <span className="fw-bold">${total}</span></p>
-                            <button className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                            <button className="btn btn-dark w-100 mt-3 p-2" onClick={clearCart}>Vaciar Carrito</button>
                         </div>
                     </div>
                 </nav>
